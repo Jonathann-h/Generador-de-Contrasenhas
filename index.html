@@ -1,18 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Generador de Contraseñas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Contraseñas | JH</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <h1>Generador de Contraseñas</h1>
+
         <label for="length">Longitud de la contraseña:</label>
         <input type="number" id="length" value="12" min="6" max="30">
+
+        <!-- Opciones de tipos de caracteres -->
+        <div class="options">
+            <label><input type="checkbox" id="includeLower" checked> Incluir letras minúsculas</label><br>
+            <label><input type="checkbox" id="includeUpper" checked> Incluir letras mayúsculas</label><br>
+            <label><input type="checkbox" id="includeNumbers" checked> Incluir números</label><br>
+            <label><input type="checkbox" id="includeSymbols" checked> Incluir símbolos</label><br>
+        </div>
+
         <button onclick="generatePassword()">Generar contraseña</button>
         <br>
         <textarea id="password" rows="2" cols="30" readonly></textarea>
+
+        <!-- Botón para copiar la contraseña -->
+        <button onclick="copyPassword()">Copiar contraseña</button>
+
+        <!-- Barra de fuerza de la contraseña -->
+        <div id="strengthBar"></div>
     </div>
 
     <script src="script.js"></script>
